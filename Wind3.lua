@@ -1,15 +1,4 @@
-local a a={
-  cache={},
-  load=function(b)
-    if not a.cache[b]then
-      a.cache[b]={c=a[b]()}
-    end
-    return a.cache[b].c
-  end
-}
-  do
-  function a.a()
-    return {
+local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}end return a.cache[b].c end}do function a.a()return{
     White=Color3.new(1,1,1),
     Black=Color3.new(0,0,0),
     Dialog="Accent",
@@ -44,19 +33,24 @@ local a a={
 
     Checkbox="Button",
     CheckboxIcon="White",
-  }
-  end
-  function a.b()
+  }end function a.b()
   local b=game:GetService"RunService"local d=
   b.Heartbeat
   local e=game:GetService"UserInputService"
   local f=game:GetService"TweenService"
   local g=game:GetService"LocalizationService"
   local h=game:GetService"HttpService"
+
   local i="https://raw.githubusercontent.com/Footagesus/Icons/main/Main-v2.lua"
-  local j=loadstring(game.HttpGetAsync and game:HttpGetAsync(i) or h:GetAsync(i) )()
+
+  local j=loadstring(
+  game.HttpGetAsync and game:HttpGetAsync(i)
+  or h:GetAsync(i)
+  )()
   j.SetIconsType"lucide"
+
   local l
+
   local m={
     Font="rbxassetid://12187365364",
     Localization=nil,
